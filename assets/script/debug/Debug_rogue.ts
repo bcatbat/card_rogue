@@ -199,7 +199,7 @@ export class Debug_rogue extends ZComponent implements IButtonClick {
         if (this.chooseNum % 2 == 0) {
             this._pathRecord.push("\n");
         }
-        this.$label_path.string = this._pathRecord.join("\t\t");
+        this.$label_path.string = this._pathRecord.join("__");
         // change
         this.change();
     }
@@ -215,7 +215,7 @@ export class Debug_rogue extends ZComponent implements IButtonClick {
             // 此处应该把积分显示出来
             record.getComponent(
                 Label
-            )!.string = `${skill.skillName}\t${skill.level}/${skill.maxLevel}\t${score}`;
+            )!.string = `${skill.skillName}_${skill.level}/${skill.maxLevel}_${score}`;
             record.setParent(this.$nd_poolContent);
         });
     }
@@ -232,7 +232,7 @@ export class Debug_rogue extends ZComponent implements IButtonClick {
             record.active = true;
             record.getComponent(
                 Label
-            )!.string = `${skill.skillName}\t${skill.level}/${skill.maxLevel}`;
+            )!.string = `${skill.skillName}_${skill.level}/${skill.maxLevel}`;
             record.setParent(this.$nd_bagA);
         });
         this._skillBag.listB.forEach(skill => {
@@ -240,7 +240,7 @@ export class Debug_rogue extends ZComponent implements IButtonClick {
             record.active = true;
             record.getComponent(
                 Label
-            )!.string = `${skill.skillName}\t${skill.level}/${skill.maxLevel}`;
+            )!.string = `${skill.skillName}_${skill.level}/${skill.maxLevel}`;
             record.setParent(this.$nd_bagB);
         });
         this._skillBag.listC.forEach(skill => {
@@ -248,7 +248,7 @@ export class Debug_rogue extends ZComponent implements IButtonClick {
             record.active = true;
             record.getComponent(
                 Label
-            )!.string = `${skill.skillName}\t${skill.level}/${skill.maxLevel}`;
+            )!.string = `${skill.skillName}_${skill.level}/${skill.maxLevel}`;
             record.setParent(this.$nd_bagC);
         });
     }
